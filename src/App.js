@@ -4,7 +4,7 @@ import Home from './components/Homepage/Home';
 import './App.css';
 import Login from './components/Authentication/loginpage/login';
 import Signup from './components/Authentication/signuppage/signup';
-import Headercommon from './Headerpage/headercommon';
+import Headercommon from './components/Headerpage/headercommon';
 
 function App() {
   return (
