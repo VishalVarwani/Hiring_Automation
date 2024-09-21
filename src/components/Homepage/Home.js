@@ -11,6 +11,8 @@ export default function Home() {
   const [candidate, setCandidate] = useState('Select Number of candidates'); // Dropdown for candidates
   const [datasource, setDatasource] = useState('Select your datasource'); // Dropdown for datasource
   const [users, setUsers] = useState([]); // State to store fetched users
+  const [email, setEmail] = useState();
+
   const [expandedUsers, setExpandedUsers] = useState({}); // State to track expanded users
 
   
@@ -45,6 +47,22 @@ const toggleExpandUser = (userId) => {
     [userId]: !prevState[userId] // Toggle between true and false
   }));
 };
+const sendMail = (userEmail) => {
+  axios
+    .get("http://localhost:5000/", {
+      params: {
+        email: userEmail,       
+      },
+    })
+    .then(() => {
+      console.log("Email sent successfully to:", userEmail);
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+    });
+};
+
+
 
   return (
     <div  style={{backgroundColor:"#FFF4E9"}}  className="container mt-5">
@@ -152,6 +170,28 @@ const toggleExpandUser = (userId) => {
               <strong>Type:</strong> {user.Type}
             </p>
           </div>
+          <div>
+        
+     
+     
+    
+      <button 
+  style={{
+    backgroundColor: "#D2691E", 
+    color: "white", 
+    border: "none", 
+    padding: "5px", 
+    cursor: "pointer",
+    marginTop: "10px", 
+    outline: "none",
+    alignContent:"end",
+    display:"flex"
+    
+  }} 
+  onClick={() => sendMail(user.Email)} // Pass the specific user's email to the function
+>
+  Send Email
+</button>          </div>
           <p style={{color: "black"}}><strong>Activity Level:</strong> {user.Activity_Level}</p>
 
           {expandedUsers[user._id] ? (
