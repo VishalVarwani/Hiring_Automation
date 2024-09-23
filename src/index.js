@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import Home from './components/Homepage/Home';
 import Demo from './demo';
+import CodingTest from './components/Complier/Editor';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
     {/* <Demo/> */}
+    {/* <CodingTest/> */}
   </React.StrictMode>
 );
 

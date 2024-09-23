@@ -1,0 +1,15 @@
+/* styles.css or your relevant CSS file */
+.formstart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.btn {
+    width: 100%; /* Make button full width */
+}

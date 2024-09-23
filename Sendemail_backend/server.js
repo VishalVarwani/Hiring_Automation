@@ -27,7 +27,7 @@ function sendEmail({ email, subject, message }) {
       to: email,
       subject: "This is a test subject",
       html: `
-      <p>This is a test message</p>
+      <p>Please <a href="http://localhost:3000/instructions">click here</a> to fill out the candidate form.</p>
       <p>Best Regards</p>
       `,
     };

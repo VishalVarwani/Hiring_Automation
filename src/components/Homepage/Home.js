@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import "../Homepage/Homepage.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios'; // Import Axios to make API requests
+import Header from '../Headerpage/headercommon';
 
 export default function Home() {
   // State to store the selected number of candidates and users
@@ -55,16 +56,18 @@ const sendMail = (userEmail) => {
       },
     })
     .then(() => {
-      console.log("Email sent successfully to:", userEmail);
+      alert("Email sent successfully", userEmail);
     })
     .catch((error) => {
-      console.error("Error sending email:", error);
+      alert("Error sending email:", error);
     });
 };
 
 
 
   return (
+    <div>        <Header/>
+
     <div  style={{backgroundColor:"#FFF4E9"}}  className="container mt-5">
       <div className="row d-flex justify-content-center">
         <div  className="col-md-10">
@@ -284,6 +287,7 @@ const sendMail = (userEmail) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const UserModel = require("./Users"); // Github collection model
 const StackOverflowModel = require("./Stackoverflow"); // Stackoverflow collection model
+const ResultModel = require("./Results"); // Result model
 
 const app = express();
 app.use(cors());
@@ -60,7 +61,36 @@ app.get('/', (req, res) => {
     }
 });
 
-// Start server
+// POST API to save candidate results
+app.post('/api/results', async (req, res) => {
+    const { name, email, score, submittedCode } = req.body; // Destructure the fields
+
+    // Create a new result document
+    const result = new ResultModel({
+        name,
+        email,
+        score,
+        submittedCode,  // Include the submitted code
+    });
+
+    try {
+        await result.save(); // Save the result to the database
+        res.status(201).send('Result saved successfully');
+    } catch (error) {
+        res.status(400).send('Error saving result: ' + error.message);
+    }
+});
+// GET API to fetch all candidate results
+app.get('/api/results', async (req, res) => {
+    try {
+        const results = await ResultModel.find(); // Fetch all results from the 'results' collection
+        res.status(200).json(results); // Return results in JSON format
+    } catch (error) {
+        res.status(500).send('Error fetching results: ' + error.message);
+    }
+});
+
+// Start the server
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
 });
