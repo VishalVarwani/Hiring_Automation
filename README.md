@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+HushHush is a MERN stack-based project that automates the recruitment and hiring process. The platform streamlines candidate evaluation by clustering them based on their activity levels, fetched from GitHub and StackOverflow profiles. It uses advanced machine learning algorithms to group candidates into high, mid, and low activity levels, helping recruiters easily identify top candidates.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Features:
+Automated Candidate Evaluation: Fetches candidate data from GitHub and StackOverflow via their APIs.
+Clustering Algorithm: Uses Python’s K-means++ algorithm to group candidates into three clusters—High, Mid, and Low activity levels.
+Interactive User Interface: Built with React.js for a responsive and user-friendly frontend.
+Efficient Backend: Node.js and Express.js power the backend, ensuring smooth data handling and processing.
+Data Management: Stores and manages candidate data in MongoDB, offering high scalability.
 
-In the project directory, you can run:
+Technologies Used- 
+Frontend: React.js
+Backend: Node.js, Express.js
+Database: MongoDB
+Machine Learning: Python (K-means++ clustering algorithm)
+APIs: GitHub API, StackOverflow API, axios
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installation
+Clone the repository:
+git clone https://github.com/VishalVarwani/HushHush.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Install dependencies for both frontend and backend:
+cd HushHush
+npm install
+cd client
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Run the development servers:
+npm run dev
+npm start for frontend
+nodemon server.js or any backend file for backend
